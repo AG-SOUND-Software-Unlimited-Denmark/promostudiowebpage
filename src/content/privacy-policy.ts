@@ -5,7 +5,7 @@ export const privacyPolicyMeta = {
   productName: "Promo Studio",
   effectiveDate: "February 2, 2026",
   lastUpdated: "February 2026",
-  contactEmail: "macremotecontroller@gmail.com",
+  contactEmail: "agsounddenmark@gmail.com",
   company: "AG-SOUND (Software Unlimited Denmark)",
   copyright: "Copyright © 2026",
 } as const;
