@@ -3,7 +3,7 @@ import Link from "next/link";
 import { PublicFooter } from "@/components/PublicFooter";
 
 export const metadata: Metadata = {
-  title: "Promo Studio — AI promos for artists & brands",
+  title: "AI Promo Studio — AI promos for artists & brands",
   description:
     "Turn a photo into short-form video promos for Instagram and TikTok. Concert campaigns and brand announcements.",
 };
@@ -35,19 +35,25 @@ export default function LandingPage() {
           <div className="relative mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:py-24">
             <div className="max-w-2xl space-y-6">
               <p className="text-sm font-medium uppercase tracking-widest text-violet-600 dark:text-violet-400">
-                AG-SOUND · Promo Studio
+                AG-SOUND · AI Promo Studio
               </p>
               <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-50">
                 Short-form promos from a single photo
               </h1>
               <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
-                Promo Studio helps artists and brands create cinematic 10-second videos for social — powered by
+                AI Promo Studio helps artists and brands create cinematic 10-second videos for social — powered by
                 AI image-to-video, ready for Instagram and TikTok.
               </p>
             </div>
             <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
               <Link
                 className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-6 py-3 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
+                href="/terms"
+              >
+                Terms of Service
+              </Link>
+              <Link
+                className="inline-flex items-center justify-center rounded-lg border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-900"
                 href="/privacy"
               >
                 Privacy Policy
@@ -77,7 +83,7 @@ export default function LandingPage() {
           <div className="mx-auto max-w-5xl px-4 py-14 text-center">
             <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">Available on Android</h2>
             <p className="mx-auto mt-2 max-w-lg text-sm text-zinc-600 dark:text-zinc-300">
-              Create promos in the Promo Studio Android app — pick a template, upload a photo, and purchase credits
+              Create promos in the AI Promo Studio Android app — pick a template, upload a photo, and purchase credits
               via Google Play. The web studio is not open for sign-in yet.
             </p>
           </div>

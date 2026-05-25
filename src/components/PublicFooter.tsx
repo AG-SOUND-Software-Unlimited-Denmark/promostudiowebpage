@@ -9,6 +9,9 @@ export function PublicFooter() {
           {privacyPolicyMeta.company} · {privacyPolicyMeta.copyright}
         </p>
         <nav className="flex flex-wrap gap-4">
+          <Link className="hover:text-zinc-800 dark:hover:text-zinc-200" href="/terms">
+            Terms of Service
+          </Link>
           <Link className="hover:text-zinc-800 dark:hover:text-zinc-200" href="/privacy">
             Privacy Policy
           </Link>

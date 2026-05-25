@@ -14,7 +14,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Promo Studio — AI promos for artists & brands",
+  title: "AI Promo Studio — AI promos for artists & brands",
   description:
     "Turn a photo into short-form video promos for Instagram and TikTok. Concert campaigns and brand announcements.",
 };

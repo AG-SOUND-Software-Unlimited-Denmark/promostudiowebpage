@@ -1,8 +1,9 @@
-# Promo Studio — marketing site
+# AI Promo Studio — marketing site
 
-Static Next.js site with two public pages:
+Static Next.js site with three public pages:
 
 - `/` — landing page
+- `/terms` — terms of service
 - `/privacy` — privacy policy
 
 ## Setup

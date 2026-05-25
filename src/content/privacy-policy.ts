@@ -1,24 +1,18 @@
-/** Privacy policy copy — Promo Studio (AG-SOUND). */
+/** Privacy policy copy — AI Promo Studio (AG-SOUND). */
 
-export const privacyPolicyMeta = {
+import type { LegalDocumentMeta, LegalSection } from "@/content/legal-types";
+
+export const privacyPolicyMeta: LegalDocumentMeta = {
   title: "Privacy Policy",
-  productName: "Promo Studio",
+  productName: "AI Promo Studio",
   effectiveDate: "February 2, 2026",
   lastUpdated: "February 2026",
   contactEmail: "agsounddenmark@gmail.com",
   company: "AG-SOUND (Software Unlimited Denmark)",
   copyright: "Copyright © 2026",
-} as const;
-
-export type PrivacySection = {
-  id: string;
-  title: string;
-  paragraphs?: string[];
-  bullets?: string[];
-  subsections?: { title: string; paragraphs?: string[]; bullets?: string[] }[];
 };
 
-export const privacyPolicySections: PrivacySection[] = [
+export const privacyPolicySections: LegalSection[] = [
   {
     id: "overview",
     title: "1. Overview",
@@ -31,7 +25,7 @@ export const privacyPolicySections: PrivacySection[] = [
     id: "data-collection",
     title: "2. Information We Collect",
     paragraphs: [
-      "The information we collect depends on how you use Promo Studio. You must sign in to create promos and manage credits on the Android app. Web studio sign-in may be offered later; this site currently provides marketing pages and the privacy policy only.",
+      `The information we collect depends on how you use ${privacyPolicyMeta.productName}. You must sign in to create promos and manage credits on the Android app. Web studio sign-in may be offered later; this site currently provides marketing pages and the privacy policy only.`,
     ],
     subsections: [
       {
@@ -68,7 +62,7 @@ export const privacyPolicySections: PrivacySection[] = [
           "Firebase Analytics: app events (for example screen views, promo started) and an analytics user ID linked to your account when signed in.",
           "Firebase Crashlytics: crash reports, stack traces, and optional diagnostic attributes to fix stability issues.",
           "These SDKs may collect device and app-instance identifiers as described in Google's documentation. Collection is disabled in development builds unless you explicitly enable debug analytics.",
-          "We do not use Google Mobile Ads (AdMob) in Promo Studio.",
+          `We do not use Google Mobile Ads (AdMob) in ${privacyPolicyMeta.productName}.`,
           "You can limit ad-related identifiers in Android settings; uninstalling the app stops further collection from the app.",
         ],
       },
@@ -77,7 +71,7 @@ export const privacyPolicySections: PrivacySection[] = [
         bullets: [
           "If you use the web studio, we store brand profiles, uploaded brand assets, campaign briefs, and generation metadata in our application database tied to your signed-in account.",
           "If you subscribe through our website, Stripe processes payments. We store Stripe customer and subscription identifiers and billing status so we can enable paid features. Stripe's privacy policy applies to payment processing.",
-          "The public marketing pages (/ and /privacy) do not require sign-in. We do not currently run third-party marketing analytics or session-recording tools on the Promo Studio website.",
+          `The public marketing pages (/ and /privacy) do not require sign-in. We do not currently run third-party marketing analytics or session-recording tools on the ${privacyPolicyMeta.productName} website.`,
         ],
       },
       {
@@ -116,7 +110,7 @@ export const privacyPolicySections: PrivacySection[] = [
     id: "sharing",
     title: "5. Who We Share Information With",
     paragraphs: [
-      "We share information only with service providers that help us run Promo Studio, under contracts or terms that require them to protect your data:",
+      `We share information only with service providers that help us run ${privacyPolicyMeta.productName}, under contracts or terms that require them to protect your data:`,
     ],
     bullets: [
       "Supabase: authentication, Postgres database, and file storage for uploads and generated videos.",
@@ -149,7 +143,7 @@ export const privacyPolicySections: PrivacySection[] = [
     id: "children",
     title: "8. Children's Privacy",
     paragraphs: [
-      "Promo Studio is not directed at children under 13 (or the minimum age required in your country). We do not knowingly collect personal information from children. If you believe a child has provided us data, contact us and we will delete it.",
+      `${privacyPolicyMeta.productName} is not directed at children under 13 (or the minimum age required in your country). We do not knowingly collect personal information from children. If you believe a child has provided us data, contact us and we will delete it.`,
     ],
   },
   {

@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { PrivacyPolicyDocument } from "@/components/PrivacyPolicyDocument";
+import { LegalDocument } from "@/components/LegalDocument";
 import { PublicFooter } from "@/components/PublicFooter";
+import { termsOfServiceMeta, termsOfServiceSections } from "@/content/terms-of-service";
 
 export const metadata: Metadata = {
-  title: "Privacy Policy — AI Promo Studio",
-  description: "Privacy Policy for AI Promo Studio — mobile app, web studio, and video generation services.",
+  title: "Terms of Service — AI Promo Studio",
+  description:
+    "Terms of Service for AI Promo Studio — AI video promos, credits, limitations of liability, and acceptance of AI output quality.",
 };
 
-export default function PrivacyPage() {
+export default function TermsPage() {
   return (
     <>
       <main className="mx-auto max-w-3xl px-4 py-12">
@@ -17,7 +19,7 @@ export default function PrivacyPage() {
             ← Back to home
           </Link>
         </p>
-        <PrivacyPolicyDocument />
+        <LegalDocument meta={termsOfServiceMeta} sections={termsOfServiceSections} />
       </main>
       <PublicFooter />
     </>
