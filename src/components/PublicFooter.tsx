@@ -3,16 +3,16 @@ import { privacyPolicyMeta } from "@/content/privacy-policy";
 
 export function PublicFooter() {
   return (
-    <footer className="border-t border-zinc-200 bg-white dark:border-zinc-800 dark:bg-zinc-950">
-      <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-8 text-sm text-zinc-500 sm:flex-row sm:items-center sm:justify-between">
+    <footer className="border-t border-white/10 bg-brand-elevated">
+      <div className="mx-auto flex max-w-5xl flex-col gap-3 px-4 py-8 text-sm text-brand-muted sm:flex-row sm:items-center sm:justify-between">
         <p>
           {privacyPolicyMeta.company} · {privacyPolicyMeta.copyright}
         </p>
         <nav className="flex flex-wrap gap-4">
-          <Link className="hover:text-zinc-800 dark:hover:text-zinc-200" href="/terms">
+          <Link className="transition-colors hover:text-white" href="/terms">
             Terms of Service
           </Link>
-          <Link className="hover:text-zinc-800 dark:hover:text-zinc-200" href="/privacy">
+          <Link className="transition-colors hover:text-white" href="/privacy">
             Privacy Policy
           </Link>
         </nav>

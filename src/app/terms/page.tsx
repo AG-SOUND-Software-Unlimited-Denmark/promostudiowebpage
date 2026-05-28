@@ -14,8 +14,8 @@ export default function TermsPage() {
   return (
     <>
       <main className="mx-auto max-w-3xl px-4 py-12">
-        <p className="mb-8 text-sm text-zinc-500">
-          <Link className="underline hover:text-zinc-800 dark:hover:text-zinc-200" href="/">
+        <p className="mb-8 text-sm text-brand-muted">
+          <Link className="underline transition-colors hover:text-white" href="/">
             ← Back to home
           </Link>
         </p>

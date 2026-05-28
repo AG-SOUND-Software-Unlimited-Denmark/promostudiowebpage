@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
+import { BrandMark } from "@/components/BrandMark";
 import { PublicFooter } from "@/components/PublicFooter";
 
 export const metadata: Metadata = {
@@ -30,59 +32,78 @@ export default function LandingPage() {
   return (
     <>
       <main>
-        <section className="relative overflow-hidden border-b border-zinc-200 bg-gradient-to-b from-white to-zinc-50 dark:border-zinc-800 dark:from-zinc-950 dark:to-zinc-900">
-          <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,rgba(120,119,198,0.15),transparent)]" />
-          <div className="relative mx-auto flex max-w-5xl flex-col gap-10 px-4 py-16 sm:py-24">
-            <div className="max-w-2xl space-y-6">
-              <p className="text-sm font-medium uppercase tracking-widest text-violet-600 dark:text-violet-400">
-                AG-SOUND · AI Promo Studio
-              </p>
-              <h1 className="text-4xl font-semibold tracking-tight text-zinc-900 sm:text-5xl dark:text-zinc-50">
-                Short-form promos from a single photo
-              </h1>
-              <p className="text-lg leading-relaxed text-zinc-600 dark:text-zinc-300">
-                AI Promo Studio helps artists and brands create cinematic 10-second videos for social — powered by
-                AI image-to-video, ready for Instagram and TikTok.
-              </p>
+        <section className="relative overflow-hidden border-b border-white/10">
+          <div
+            className="brand-glow pointer-events-none absolute -right-24 top-1/2 h-[min(90vw,520px)] w-[min(90vw,520px)] -translate-y-1/2 opacity-50"
+            style={{
+              background:
+                "conic-gradient(from 200deg at 50% 50%, #ff8a00, #e52e71, #9c27b0, #2b59ff, #ff8a00)",
+              filter: "blur(80px)",
+            }}
+            aria-hidden
+          />
+          <div className="relative mx-auto grid max-w-5xl gap-10 px-4 py-14 lg:grid-cols-2 lg:items-center lg:py-20">
+            <div className="space-y-8">
+              <BrandMark variant="hero" animate />
+              <div className="space-y-5">
+                <h1 className="text-4xl font-semibold leading-tight tracking-tight sm:text-5xl">
+                  Create 10-second{" "}
+                  <span className="brand-gradient-text">AI promo videos</span> from one photo
+                </h1>
+                <p className="max-w-xl text-lg leading-relaxed text-brand-muted">
+                  Choose a template, upload a photo, and get a professional video ready for Instagram, TikTok, and
+                  more — in minutes.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+                <Link
+                  className="inline-flex items-center justify-center rounded-xl brand-gradient-bg px-6 py-3 text-sm font-semibold text-white shadow-lg shadow-brand-pink/25 transition-opacity hover:opacity-90"
+                  href="/terms"
+                >
+                  Terms of Service
+                </Link>
+                <Link
+                  className="inline-flex items-center justify-center rounded-xl border border-white/15 bg-brand-surface px-6 py-3 text-sm font-medium text-white transition-colors hover:border-white/25 hover:bg-brand-elevated"
+                  href="/privacy"
+                >
+                  Privacy Policy
+                </Link>
+              </div>
             </div>
-            <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
-              <Link
-                className="inline-flex items-center justify-center rounded-lg bg-zinc-900 px-6 py-3 text-sm font-medium text-white hover:bg-zinc-800 dark:bg-white dark:text-zinc-900 dark:hover:bg-zinc-200"
-                href="/terms"
-              >
-                Terms of Service
-              </Link>
-              <Link
-                className="inline-flex items-center justify-center rounded-lg border border-zinc-300 px-6 py-3 text-sm font-medium text-zinc-900 hover:bg-zinc-100 dark:border-zinc-600 dark:text-zinc-50 dark:hover:bg-zinc-900"
-                href="/privacy"
-              >
-                Privacy Policy
-              </Link>
+            <div className="relative flex justify-center lg:justify-end">
+              <Image
+                src="/hero-banner.png"
+                alt="AI Promo Studio app preview showing a concert promo on a phone"
+                width={640}
+                height={400}
+                className="relative z-10 w-full max-w-lg rounded-2xl"
+                priority
+              />
             </div>
           </div>
         </section>
 
         <section className="mx-auto max-w-5xl px-4 py-16">
-          <h2 className="mb-8 text-center text-sm font-semibold uppercase tracking-wide text-zinc-500">
+          <h2 className="mb-8 text-center text-sm font-semibold uppercase tracking-wide text-brand-muted">
             Built for social-first campaigns
           </h2>
           <div className="grid gap-6 md:grid-cols-3">
             {features.map((f) => (
               <div
                 key={f.title}
-                className="rounded-2xl border border-zinc-200 bg-white p-6 shadow-sm dark:border-zinc-800 dark:bg-zinc-900"
+                className="rounded-2xl border border-white/10 bg-brand-surface p-6 shadow-sm"
               >
-                <h3 className="text-base font-semibold text-zinc-900 dark:text-zinc-50">{f.title}</h3>
-                <p className="mt-3 text-sm leading-relaxed text-zinc-600 dark:text-zinc-300">{f.description}</p>
+                <h3 className="text-base font-semibold text-white">{f.title}</h3>
+                <p className="mt-3 text-sm leading-relaxed text-brand-muted">{f.description}</p>
               </div>
             ))}
           </div>
         </section>
 
-        <section className="border-t border-zinc-200 bg-zinc-100/80 dark:border-zinc-800 dark:bg-zinc-900/50">
+        <section className="border-t border-white/10 bg-brand-elevated">
           <div className="mx-auto max-w-5xl px-4 py-14 text-center">
-            <h2 className="text-xl font-semibold text-zinc-900 dark:text-zinc-50">Available on Android</h2>
-            <p className="mx-auto mt-2 max-w-lg text-sm text-zinc-600 dark:text-zinc-300">
+            <h2 className="text-xl font-semibold text-white">Available on Android</h2>
+            <p className="mx-auto mt-2 max-w-lg text-sm text-brand-muted">
               Create promos in the AI Promo Studio Android app — pick a template, upload a photo, and purchase credits
               via Google Play. The web studio is not open for sign-in yet.
             </p>

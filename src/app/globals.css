@@ -1,26 +1,97 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --brand-bg: #0a0a0f;
+  --brand-bg-elevated: #12121a;
+  --brand-surface: #1a0b2e;
+  --brand-border: rgba(255, 255, 255, 0.1);
+  --brand-text: #f5f5f7;
+  --brand-text-muted: rgba(245, 245, 247, 0.68);
+  --brand-orange: #ff8a00;
+  --brand-pink: #e52e71;
+  --brand-purple: #9c27b0;
+  --brand-blue: #2b59ff;
+  --brand-gradient: linear-gradient(
+    135deg,
+    var(--brand-orange) 0%,
+    var(--brand-pink) 38%,
+    var(--brand-purple) 68%,
+    var(--brand-blue) 100%
+  );
+  --background: var(--brand-bg);
+  --foreground: var(--brand-text);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  --color-brand-bg: var(--brand-bg);
+  --color-brand-elevated: var(--brand-bg-elevated);
+  --color-brand-surface: var(--brand-surface);
+  --color-brand-muted: var(--brand-text-muted);
+  --color-brand-orange: var(--brand-orange);
+  --color-brand-pink: var(--brand-pink);
+  --color-brand-purple: var(--brand-purple);
+  --color-brand-blue: var(--brand-blue);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+@keyframes brand-dissolve {
+  0%,
+  100% {
+    opacity: 0.28;
+    filter: blur(1px);
+  }
+  50% {
+    opacity: 1;
+    filter: blur(0);
+  }
+}
+
+@keyframes brand-glow-pulse {
+  0%,
+  100% {
+    opacity: 0.45;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.75;
+    transform: scale(1.04);
+  }
+}
+
+.brand-dissolve {
+  animation: brand-dissolve 4.5s ease-in-out infinite;
+}
+
+.brand-gradient-text {
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.brand-gradient-bg {
+  background: var(--brand-gradient);
+}
+
+.brand-glow {
+  animation: brand-glow-pulse 6s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .brand-dissolve,
+  .brand-glow {
+    animation: none;
+    opacity: 1;
+    filter: none;
+    transform: none;
   }
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--brand-bg);
+  color: var(--brand-text);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
 }

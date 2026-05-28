@@ -17,6 +17,10 @@ export const metadata: Metadata = {
   title: "AI Promo Studio — AI promos for artists & brands",
   description:
     "Turn a photo into short-form video promos for Instagram and TikTok. Concert campaigns and brand announcements.",
+  icons: {
+    icon: "/logo-icon.png",
+    apple: "/logo-icon.png",
+  },
 };
 
 export default function RootLayout({
@@ -29,7 +33,7 @@ export default function RootLayout({
       lang="en"
       className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
-      <body className="flex min-h-full flex-col bg-zinc-50 text-zinc-900 dark:bg-zinc-950 dark:text-zinc-50">
+      <body className="flex min-h-full flex-col bg-brand-bg text-white">
         <PublicHeader />
         <div className="flex-1">{children}</div>
       </body>
